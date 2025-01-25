@@ -24,7 +24,7 @@ model User {
   writtenPosts    Post[]         @relation("WrittenPosts")
   favoriteposts   Post[]         @relation("FavoritePosts")
   UserPrefrence   UserPrefrence? @relation(fields: [userPrefrenceId], references: [id])
-  userPrefrenceId String?
+  userPrefrenceId String?        @unique
 
   @@unique([age, name])
   @@index([email])
